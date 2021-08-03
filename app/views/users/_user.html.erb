@@ -1,0 +1,27 @@
+<table class="table">
+  <h2>User info</h2>
+  <thead>
+    <tr>
+      <%= attachment_image_tag user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg"%>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Name</th>
+      <th><%= user.name %></th>
+    </tr>
+    <tr>
+      <th>Introduction</th>
+      <th><%= user.introduction %></th>
+    </tr>
+    
+  </tbody>
+</table>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+<div class="row">
+  <%= link_to edit_user_path(user.id) ,class: "btn btn-outline-secondary btn-block fas fa-user-cog" do %>
+  <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+  <% end %>
+</div>  
